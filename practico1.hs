@@ -165,9 +165,17 @@ primIgualesA v (x:y:xs) | x == v && y == v = x : primIgualesA v (y:xs)
 
 
 -- ejercicio 10 (b)
+
 primIgualesA' :: Eq a => a -> [a] -> [a]
 primIgualesA' v x = takeWhile (==v) x
 
 ----------------------------------------------------
 
--- ejercicio 11
+-- ejercicio 11 (a)
+
+primIguales :: Eq a => [a] -> [a]
+primIguales [] = []
+primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
+                     | x /= y = x : []
+
+-- ejercicio 11 (b)
