@@ -142,19 +142,27 @@ duplica' x = map (\n -> (2 * n)) x
 
 -- ejercicio 9
 
-esPar :: Int -> Bool
-esPar x | even x  = True
-        | otherwise = False
-
 listaPares :: [Int] -> [Int]
 listaPares [] = []
-listaPares (x:xs)   | esPar x = x : listaPares xs
+listaPares (x:xs)   | even x = x : listaPares xs
                     | otherwise = listaPares xs
 
 listaPares' :: [Int] -> [Int]
-listaPares' x = filter esPar x
+listaPares' x = filter even x
 
 multiplicaPares' :: [Int] -> Int
-multiplicaPares' xs = productoria (listaPares xs)
+multiplicaPares' x = productoria (listaPares x)
 
 ----------------------------------------------------
+
+-- ejercicio 10 (a)
+
+primIgualesA :: Eq a => a -> [a] -> [a]
+primIgualesA v [] = []
+primIgualesA v (x:y:xs)   | x == v && y == v = x : primIgualesA v (y:xs)
+                        | x == v && y /= v = x : []
+                        | otherwise = []
+
+
+-- ejercicio 10 (b)
+
