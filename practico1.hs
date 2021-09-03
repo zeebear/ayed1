@@ -117,9 +117,10 @@ multiplicaPares xs = productoria' xs (soloPares)
 
 -- ejercicio 7
 {-
-- map aplica una función a cada elemento de una lista, y devuelve una lista de los nuevos valores correspondientes.
-- filter compara cada elemento de una lista con un predicado, y devuelve una lista de los elementos que satisfacen
-  el predicado.
+- map aplica una función a cada elemento de una lista, y devuelve una lista de
+  los nuevos valores correspondientes.
+- filter compara cada elemento de una lista con un predicado, y devuelve una
+  lista de los elementos que satisfacen el predicado.
 
 - map succ [1, -4, 6, 2, -8] devuelve [2,-3,7,3,-7]
 
@@ -158,7 +159,9 @@ multiplicaPares' x = productoria (listaPares x)
 -- ejercicio 10 (a)
 
 primIgualesA :: Eq a => a -> [a] -> [a]
-primIgualesA v [] = []
+primIgualesA _ [] = []
+primIgualesA v [x] | x == v = x : primIgualesA v []
+                   | otherwise = []
 primIgualesA v (x:y:xs) | x == v && y == v = x : primIgualesA v (y:xs)
                         | x == v && y /= v = x : []
                         | otherwise = []
@@ -175,7 +178,13 @@ primIgualesA' v x = takeWhile (==v) x
 
 primIguales :: Eq a => [a] -> [a]
 primIguales [] = []
+primIguales [x] = [x]
 primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
-                     | x /= y = x : []
+                     | otherwise = x : []
 
 -- ejercicio 11 (b)
+primIguales' :: Eq a => [a] -> [a]
+primIguales' [] = []
+primIguales' (x:xs) = primIgualesA' x (x:xs)
+
+----------------------------------------------------
