@@ -160,12 +160,8 @@ multiplicaPares' x = productoria (listaPares x)
 
 primIgualesA :: Eq a => a -> [a] -> [a]
 primIgualesA _ [] = []
-primIgualesA v [x] | x == v = x : primIgualesA v []
-                   | otherwise = []
-primIgualesA v (x:y:xs) | x == v && y == v = x : primIgualesA v (y:xs)
-                        | x == v && y /= v = x : []
-                        | otherwise = []
-
+primIgualesA v (x:xs) | x == v = x : primIgualesA v xs
+                      | otherwise = []
 
 -- ejercicio 10 (b)
 
