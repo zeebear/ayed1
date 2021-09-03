@@ -118,7 +118,7 @@ multiplicaPares xs = productoria' xs (soloPares)
 -- ejercicio 7
 {-
 - map aplica una función a cada elemento de una lista, y devuelve una lista de los nuevos valores correspondientes.
-- filter compara cada elemento de una lista con un predicado, y devuelve una lista de los elementos que satisfagan
+- filter compara cada elemento de una lista con un predicado, y devuelve una lista de los elementos que satisfacen
   el predicado.
 
 - map succ [1, -4, 6, 2, -8] devuelve [2,-3,7,3,-7]
@@ -129,4 +129,32 @@ multiplicaPares xs = productoria' xs (soloPares)
 
 ----------------------------------------------------
 
-duplica :: [Int] -> (Int -> Int) -> [Int]
+-- ejercicio 8
+
+duplica :: [Int] -> [Int]
+duplica [] = []
+duplica (x:xs) = 2 * x : duplica xs
+
+duplica' :: [Int] -> [Int]
+duplica' x = map (\n -> (2 * n)) x
+
+----------------------------------------------------
+
+-- ejercicio 9
+
+esPar :: Int -> Bool
+esPar x | even x  = True
+        | otherwise = False
+
+listaPares :: [Int] -> [Int]
+listaPares [] = []
+listaPares (x:xs)   | esPar x = x : listaPares xs
+                    | otherwise = listaPares xs
+
+listaPares' :: [Int] -> [Int]
+listaPares' x = filter esPar x
+
+multiplicaPares' :: [Int] -> Int
+multiplicaPares' xs = productoria (listaPares xs)
+
+----------------------------------------------------
