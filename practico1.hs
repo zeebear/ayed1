@@ -41,7 +41,8 @@ productoria (x:xs) = x * productoria xs
 -- ejercicio 2 (d)
 factorial :: Int -> Int
 factorial 0 = 1
-factorial x = x * factorial (x - 1)
+factorial x | x > 0 = x * factorial (x - 1)
+            | otherwise = undefined
 
 -- ejercicio 2 (e)
 promedio :: [Int] -> Int
@@ -101,7 +102,7 @@ sumaCuadrados n = sumatoria' [0..n] (\x -> (x * x))
 
 -- ejercicio 6 (d)
 factorial' :: Int -> Int
-factorial' n = productoria [0..n]
+factorial' n = productoria [1..n]
 -- is this cheating? cf. doc 30/08 for version using ej. 4 function
 
 -- ejercicio 6 (e)
@@ -131,12 +132,14 @@ multiplicaPares xs = productoria' xs (soloPares)
 ----------------------------------------------------
 
 -- ejercicio 8
+-- no sabía si dejar el tipo como [Int] -> [Int] para evtitar el warning, o si
+-- aceptar cualquier tipo de número
 
-duplica :: [Int] -> [Int]
+duplica :: Num a => [a] -> [a]
 duplica [] = []
 duplica (x:xs) = 2 * x : duplica xs
 
-duplica' :: [Int] -> [Int]
+duplica' :: Num a => [a] -> [a]
 duplica' x = map (\n -> (2 * n)) x
 
 ----------------------------------------------------
