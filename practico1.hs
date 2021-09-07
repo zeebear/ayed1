@@ -1,9 +1,5 @@
 ----------------------------------------------------
--- Practico 1 AyED
-
--- https://cs.famaf.unc.edu.ar/~mdoming/docencia/algo1/Ayed_1-Proy_1-2020.pdf
--- 23/08 https://docs.google.com/document/d/1tooMyfGIG052Fwc4y09ehZipRptiSrRXc2TeBSCb4qo/edit for more examples
--- 30/08 https://docs.google.com/document/d/1RiXhggfn8zgFmROvhlHllmwKJoU2ztm4uu8-3sfWqAc/edit?usp=sharing
+-- Practico 1 AyED1
 ----------------------------------------------------
 
 -- ejercicio 1 (a)
@@ -103,7 +99,6 @@ sumaCuadrados n = sumatoria' [0..n] (\x -> (x * x))
 -- ejercicio 6 (d)
 factorial' :: Int -> Int
 factorial' n = productoria [1..n]
--- is this cheating? cf. doc 30/08 for version using ej. 4 function
 
 -- ejercicio 6 (e)
 soloPares :: Int -> Int
@@ -112,13 +107,12 @@ soloPares x | even x  = x
 
 multiplicaPares :: [Int] -> Int
 multiplicaPares xs = productoria' xs (soloPares)
--- solution modified from class 30/08
 
 ----------------------------------------------------
 
 -- ejercicio 7
 {-
-- map aplica una función a cada elemento de una lista, y devuelve una lista de
+- map aplica una función a cada elemento de una lista uno por uno, y devuelve una lista de
   los nuevos valores correspondientes.
 - filter compara cada elemento de una lista con un predicado, y devuelve una
   lista de los elementos que satisfacen el predicado.
@@ -132,8 +126,11 @@ multiplicaPares xs = productoria' xs (soloPares)
 ----------------------------------------------------
 
 -- ejercicio 8
--- no sabía si dejar el tipo como [Int] -> [Int] para evtitar el warning, o si
--- aceptar cualquier tipo de número
+{-
+Dado que en este ejercicio no reutilizo otras funciones, no sabía si sería mejor
+dejar el tipo como [Int] -> [Int] para evtitar el warning sobre tipos, o
+aceptar cualquier tipo de número.
+-}
 
 duplica :: Num a => [a] -> [a]
 duplica [] = []
