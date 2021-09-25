@@ -3,3 +3,5 @@
 ----------------------------------------------------
 
 -- ejercicio 1 (a)
+data Carrera = Matematica | Fisica | Computacion | Astronomia | MatematicaAplicada
+
