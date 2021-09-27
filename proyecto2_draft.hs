@@ -236,7 +236,7 @@ la_borrar clave (Nodo a b la) | a == clave = la
 
 ----------------------------------------------------
 
-data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
+data Arbol a = Hoja | Rama (Arbol a) a (Arbol a) deriving (Eq, Show)
 
 -- accidentally:
 
@@ -276,14 +276,14 @@ a_inc (Rama (arb1) a (arb2)) = (Rama (arb1) (a + 1) (arb2))
 -- compiles - really not sure about Hoja
 
 -- ejercicio 7 (d)
-{-
+
 a_map :: (a -> b) -> Arbol a -> Arbol b
-a_map f (Rama Hoja a Hoja) = (Rama Hoja (f a) Hoja)
-a_map f (Rama (arb1) a Hoja) = (Rama (arb1) (f a) Hoja)
-a_map f (Rama Hoja a (arb2)) = (Rama Hoja (f a) (arb2))
-a_map f (Rama (arb1) a (arb2)) = (Rama (arb1) (f a) (arb2))
+a_map f (Rama Hoja x Hoja) = (Rama Hoja (f x) Hoja)
+a_map f (Rama (arb1) x Hoja) = (Rama (arb1) (f x) Hoja)
+a_map f (Rama Hoja x (arb2)) = (Rama Hoja (f x) (arb2))
+a_map f (Rama (arb1) x (arb2)) = (Rama (arb1) (f x) (arb2))
 
-
+{-
 a_inc' :: (a -> a) -> Arbol a -> Arbol a
 a_inc' arbol = a_map (+1) arbol
 -}
