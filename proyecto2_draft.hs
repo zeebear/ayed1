@@ -238,26 +238,52 @@ la_borrar clave (Nodo a b la) | a == clave = la
 
 data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
 
+-- accidentally:
+
+a_height :: Arbol a -> Int
+a_height Hoja = 0
+a_height (Rama (arb1) _ (arb2)) = 1 + (max (a_long arb1) (a_long arb2))
+
 -- ejercicio 7 (a)
 
 a_long :: Arbol a -> Int
 a_long Hoja = 1
-a_long (Rama (arb1) _ (arb2)) = a_long arb1 + a_long arb2
--- counts the first node/arbol twice
+a_long (Rama Hoja _ Hoja) = 1
+a_long (Rama (arb1) _ Hoja) = 1 + a_long arb1
+a_long (Rama Hoja _ (arb2)) = 1 + a_long arb2
+a_long (Rama (arb1) _ (arb2)) = 1 + a_long arb1 + a_long arb2
+-- I think this is right? cant is 3 -- cant, cantar, canto?
 
 
 -- ejercicio 7 (b)
 
 a_hojas :: Arbol a -> Int
 a_hojas Hoja = 1
+a_hojas (Rama Hoja _ Hoja) = 1
+a_hojas (Rama Hoja _ (arb2)) = 1 + a_hojas arb2
+a_hojas (Rama (arb1) _ Hoja) = 1 + a_hojas arb1
 a_hojas (Rama (arb1) _ (arb2)) = a_hojas arb1 + a_hojas arb2
+-- works!!
 
-{-
 -- ejercicio 7 (c)
 
+a_inc :: Num a => Arbol a -> Arbol a
+a_inc Hoja = Hoja
+a_inc (Rama Hoja a Hoja) = (Rama Hoja (a + 1) Hoja)
+a_inc (Rama (arb1) a Hoja) = (Rama (arb1) (a + 1) Hoja)
+a_inc (Rama Hoja a (arb2)) = (Rama Hoja (a + 1) (arb2))
+a_inc (Rama (arb1) a (arb2)) = (Rama (arb1) (a + 1) (arb2))
+-- compiles - really not sure about Hoja
 
 -- ejercicio 7 (d)
+{-
+a_map :: (a -> b) -> Arbol a -> Arbol b
+
+
+a_inc' :: (a -> a) -> Arbol a -> Arbol a
+a_inc' arbol = a_map (+1) arbol
 -}
+------
 
 type Prefijos = Arbol String
 can , cana , canario , canas , cant , cantar , canto :: Prefijos
@@ -268,3 +294,13 @@ canas = Rama Hoja "s" Hoja
 cant = Rama cantar "t" canto
 cantar = Rama Hoja "ar" Hoja
 canto = Rama Hoja "o" Hoja
+
+{-
+type Numeros = Arbol Num a
+1 , 1.5 , 2 , 2.5 , 3 :: Numeros
+1 = Rama 1.5 1 2
+1.5 = Rama Hoja 1.5 Hoja
+2 = Rama 2.5 2 3
+2.5 = Rama Hoja 2.5 Hoja
+3 = Hoja 3 Hoja
+-}
