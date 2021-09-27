@@ -146,3 +146,49 @@ la_borrar :: Eq a => a -> ListaAsoc a b -> ListaAsoc a b
 la_borrar _ Vacia = Vacia
 la_borrar clave (Nodo a b la) | a == clave = la
                               | otherwise = Nodo a b (la_borrar clave la)
+
+----------------------------------------------------
+
+data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
+
+-- ejercicio 7 (a)
+
+a_long :: Arbol a -> Int
+a_long Hoja = 1
+a_long (Rama Hoja _ Hoja) = 1
+a_long (Rama (arb1) _ Hoja) = 1 + a_long arb1
+a_long (Rama Hoja _ (arb2)) = 1 + a_long arb2
+a_long (Rama (arb1) _ (arb2)) = 1 + a_long arb1 + a_long arb2
+-- I think this is right? cant is 3 -- cant, cantar, canto?
+
+
+-- ejercicio 7 (b)
+
+a_hojas :: Arbol a -> Int
+a_hojas Hoja = 1
+a_hojas (Rama Hoja _ Hoja) = 1
+a_hojas (Rama (arb1) _ Hoja) = 1 + a_hojas arb1
+a_hojas (Rama Hoja _ (arb2)) = 1 + a_hojas arb2
+a_hojas (Rama (arb1) _ (arb2)) = a_hojas arb1 + a_hojas arb2
+
+-- ejercicio 7 (c)
+
+a_inc :: Num a => Arbol a -> Arbol a
+a_inc Hoja = Hoja
+a_inc (Rama Hoja a Hoja) = (Rama Hoja (a + 1) Hoja)
+a_inc (Rama (arb1) a Hoja) = (Rama (arb1) (a + 1) Hoja)
+a_inc (Rama Hoja a (arb2)) = (Rama Hoja (a + 1) (arb2))
+a_inc (Rama (arb1) a (arb2)) = (Rama (arb1) (a + 1) (arb2))
+
+-- ejercicio 7 (d)
+
+a_map :: (a -> b) -> Arbol a -> Arbol b
+a_map f (Rama Hoja a Hoja) = (Rama Hoja (f a) Hoja)
+a_map f (Rama (arb1) a Hoja) = (Rama (arb1) (f a) Hoja)
+a_map f (Rama Hoja a (arb2)) = (Rama Hoja (f a) (arb2))
+a_map f (Rama (arb1) a (arb2)) = (Rama (arb1) (f a) (arb2))
+
+
+a_inc' :: (a -> a) -> Arbol a -> Arbol a
+a_inc' arbol = a_map (+1) arbol
+
