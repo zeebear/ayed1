@@ -157,10 +157,74 @@ busca (Encolada p c) cargo | esDocCargo p cargo == True = Just p
 
 -- ejercicio 6 (a)
 
-data ListaAsoc a b = Vacia | Nodo a b ( ListaAsoc a b )
-
+data ListaAsoc a b = Vacia | Nodo a b (ListaAsoc a b)
+    deriving Show
 
 type GuiaTel = ListaAsoc String Int
 
+{-
+type Diccionario = ListaAsoc String String
+type Padron = ListaAsoc Int String
+type Rubbish = ListaAsoc Int Int
 
--- ejercicio 6 (a)
+GuiaTel :: String -> Int -> GuiaTel
+GuiaTel = ListaAsoc
+-}
+-- type GuiaTel a b = ListaAsoc String Int
+-- type GuiaTel = (String a, Int b) => ListaAsoc a b
+
+{-
+let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (ListaAsoc Vacia)))
+
+let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (GuiaTel Vacia)))
+
+let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (Nodo Vacia)))
+
+---
+
+This one:
+let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 Vacia))
+
+let la2 = Nodo "four" 4 (Nodo "five" 5 (Nodo "six" 6 Vacia))
+
+la3 = la_concat la la2
+
+---
+
+let la = Nodo 1 3 (Nodo 2 4 (Nodo 3 5 (Rubbish Vacia)))
+-}
+
+
+-- ejercicio 6 (b) (1)
+
+la_long :: ListaAsoc a b -> Int
+la_long Vacia = 0
+la_long (Nodo _ _ la) = 1 + la_long la
+
+
+-- ejercicio 6 (b) (2)
+
+la_concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
+la_concat Vacia Vacia = Vacia
+la_concat Vacia la = la
+la_concat (Nodo a b la1) la2 = Nodo a b (la_concat la1 la2)
+
+-- ejercicio 6 (b) (3)
+
+la_pares :: ListaAsoc a b -> [(a, b)]
+la_pares Vacia = []
+la_pares (Nodo a b la) = (a, b) : la_pares la
+
+-- ejercicio 6 (b) (4)
+
+la_busca :: Eq a => ListaAsoc a b -> a -> Maybe b
+la_busca Vacia _ = Nothing
+la_busca (Nodo a b la) clave | a == clave = Just b
+                             | otherwise = la_busca la clave
+
+-- ejercicio 6 (b) (5)
+
+la_borrar :: Eq a => a -> ListaAsoc a b -> ListaAsoc a b
+la_borrar _ Vacia = Vacia
+la_borrar clave (Nodo a b la) | a == clave = la
+                              | otherwise = Nodo a b (la_borrar clave la)
