@@ -233,3 +233,38 @@ la_borrar :: Eq a => a -> ListaAsoc a b -> ListaAsoc a b
 la_borrar _ Vacia = Vacia
 la_borrar clave (Nodo a b la) | a == clave = la
                               | otherwise = Nodo a b (la_borrar clave la)
+
+----------------------------------------------------
+
+data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
+
+-- ejercicio 7 (a)
+
+a_long :: Arbol a -> Int
+a_long Hoja = 1
+a_long (Rama (arb1) _ (arb2)) = a_long arb1 + a_long arb2
+-- counts the first node/arbol twice
+
+
+-- ejercicio 7 (b)
+
+a_hojas :: Arbol a -> Int
+a_hojas Hoja = 1
+a_hojas (Rama (arb1) _ (arb2)) = a_hojas arb1 + a_hojas arb2
+
+{-
+-- ejercicio 7 (c)
+
+
+-- ejercicio 7 (d)
+-}
+
+type Prefijos = Arbol String
+can , cana , canario , canas , cant , cantar , canto :: Prefijos
+can = Rama cana "can" cant
+cana = Rama canario "a" canas
+canario = Rama Hoja "rio" Hoja
+canas = Rama Hoja "s" Hoja
+cant = Rama cantar "t" canto
+cantar = Rama Hoja "ar" Hoja
+canto = Rama Hoja "o" Hoja
