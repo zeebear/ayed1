@@ -21,7 +21,7 @@ titulo MatematicaAplicada = "Licenciatura en Matematica Aplicada"
 type Ingreso = Int
 
 data Cargo = Titular | Asociado | Adjunto | Asistente | Auxiliar
-    deriving Show
+    deriving (Eq, Show)
 data Area = Administrativa | Ensenanza | Economica | Postgrado
     deriving Show
 
@@ -60,6 +60,12 @@ tieneCargo :: Persona -> Bool
 tieneCargo (Docente _) = True
 tieneCargo _ = False
 
+cargoDoc :: [Persona] -> [Cargo]
+cargoDoc [] = []
+cargoDoc ((Docente c) : xs) = c : cargoDoc xs
+cargoDoc (_ : xs) = cargoDoc xs
+
+
 esDocCargo :: Persona -> Cargo -> Bool
 esDocCargo (Docente Titular) Titular = True
 esDocCargo (Docente Asociado) Asociado = True
@@ -97,12 +103,11 @@ let d = Decane
 let t = Docente Titular
 let l = [(Docente Adjunto), (Docente Asociado), (Docente Asistente), (Decane), (NoDocente Postgrado), (Docente Asistente)]
 
+-}
 
 
 cuantos_doc' :: [Persona] -> Cargo -> Int
-cuantos_doc' p c = length (filter esDocCargo (filter esDocente p) c)
-
--}
+cuantos_doc' p c = length (filter (== c) (cargoDoc p))
 
 ----------------------------------------------------
 
@@ -183,9 +188,9 @@ let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (Nodo Vacia)))
 ---
 
 This one:
-let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 Vacia))
+let la = Nodo ("one" :: String) (1 :: Int) (Nodo "two" 2 (Nodo "three" 3 Vacia))
 
-let la2 = Nodo "four" 4 (Nodo "five" 5 (Nodo "six" 6 Vacia))
+let la2 = Nodo ("four" :: String) (4 :: Int) (Nodo "five" 5 (Nodo "six" 6 Vacia))
 
 la3 = la_concat la la2
 
