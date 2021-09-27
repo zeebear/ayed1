@@ -260,8 +260,8 @@ a_long (Rama (arb1) _ (arb2)) = 1 + a_long arb1 + a_long arb2
 a_hojas :: Arbol a -> Int
 a_hojas Hoja = 1
 a_hojas (Rama Hoja _ Hoja) = 1
-a_hojas (Rama Hoja _ (arb2)) = 1 + a_hojas arb2
 a_hojas (Rama (arb1) _ Hoja) = 1 + a_hojas arb1
+a_hojas (Rama Hoja _ (arb2)) = 1 + a_hojas arb2
 a_hojas (Rama (arb1) _ (arb2)) = a_hojas arb1 + a_hojas arb2
 -- works!!
 
