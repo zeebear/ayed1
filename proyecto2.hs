@@ -181,7 +181,7 @@ a_inc (Rama Hoja a (arb2)) = (Rama Hoja (a + 1) (arb2))
 a_inc (Rama (arb1) a (arb2)) = (Rama (arb1) (a + 1) (arb2))
 
 -- ejercicio 7 (d)
-
+{-
 a_map :: (a -> b) -> Arbol a -> Arbol b
 a_map f (Rama Hoja a Hoja) = (Rama Hoja (f a) Hoja)
 a_map f (Rama (arb1) a Hoja) = (Rama (arb1) (f a) Hoja)
@@ -191,4 +191,4 @@ a_map f (Rama (arb1) a (arb2)) = (Rama (arb1) (f a) (arb2))
 
 a_inc' :: (a -> a) -> Arbol a -> Arbol a
 a_inc' arbol = a_map (+1) arbol
-
+-}
