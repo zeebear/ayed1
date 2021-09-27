@@ -38,7 +38,7 @@ Docente :: Cargo -> Persona
 -}
 
 -- ejercicio 3 (c)
--- taken from class 06/09
+-- hecho en clase 06/09
 -- https://docs.google.com/document/d/1LG6gpk-2ouAMiKliZ1pWXX2_tup62Oa80Eqh2gGOF5k/edit
 
 cuantos_doc :: [Persona] -> Cargo -> Int
@@ -52,59 +52,10 @@ cuantos_doc (_: xs) c =  cuantos_doc xs c
 
 -- ejercicio 3 (d)
 
-esDocente :: Persona -> Bool
-esDocente (Docente _) = True
-esDocente _ = False
--- or
-tieneCargo :: Persona -> Bool
-tieneCargo (Docente _) = True
-tieneCargo _ = False
-
 cargoDoc :: [Persona] -> [Cargo]
 cargoDoc [] = []
 cargoDoc ((Docente c) : xs) = c : cargoDoc xs
 cargoDoc (_ : xs) = cargoDoc xs
-
-
-esDocCargo :: Persona -> Cargo -> Bool
-esDocCargo (Docente Titular) Titular = True
-esDocCargo (Docente Asociado) Asociado = True
-esDocCargo (Docente Adjunto) Adjunto = True
-esDocCargo (Docente Asistente) Asistente = True
-esDocCargo (Docente Auxiliar) Auxiliar = True
-esDocCargo _ _ = False
-
-{-
-<interactive>:124:1: error:
-    • Couldn't match expected type ‘Cargo -> t’
-                  with actual type ‘[Persona]’
-    • The function ‘filter’ is applied to three arguments,
-      but its type ‘(Persona -> Bool) -> [Persona] -> [Persona]’
-      has only two
-      In the expression: filter esDocCargo l Asociado
-      In an equation for ‘it’: it = filter esDocCargo l Asociado
-    • Relevant bindings include it :: t (bound at <interactive>:124:1)
-
-<interactive>:124:8: error:
-    • Couldn't match type ‘Cargo -> Bool’ with ‘Bool’
-      Expected type: Persona -> Bool
-        Actual type: Persona -> Cargo -> Bool
-    • Probable cause: ‘esDocCargo’ is applied to too few arguments
-      In the first argument of ‘filter’, namely ‘esDocCargo’
-      In the expression: filter esDocCargo l Asociado
-      In an equation for ‘it’: it = filter esDocCargo l Asociado
-
-In other words, I can only filter Persona, not Persona Cargo. "filter esDocente l" works fine
--}
-
-{-
-let p = Docente Adjunto
-let d = Decane
-let t = Docente Titular
-let l = [(Docente Adjunto), (Docente Asociado), (Docente Asistente), (Decane), (NoDocente Postgrado), (Docente Asistente)]
-
--}
-
 
 cuantos_doc' :: [Persona] -> Cargo -> Int
 cuantos_doc' p c = length (filter (== c) (cargoDoc p))
@@ -133,15 +84,6 @@ atender :: Cola -> Maybe Cola
 atender VaciaC = Nothing
 atender (Encolada _ c) = Just c
 
-{-
-let l = ['a', 'b', 'c', 'd', 'e']
-let c = Encolada (Docente Adjunto) (Encolada (Docente Asociado) (Encolada (Docente Asistente) (Encolada (Decane) (Encolada (NoDocente Postgrado) VaciaC))))
-
-No: let s = Encolada Docente (Encolada NoDocente (Encolada Docente (Encolada Decane (Encolada NoDocente VaciaC))))
-No: let t = Encolada Docente Adjunto (Encolada NoDocente Ensenanza (Encolada Docente Titular (Encolada Decane (Encolada NoDocente Postgrado VaciaC))))
-
--}
-
 -- ejercicio 5 (a) (2)
 
 encolar :: Persona -> Cola -> Cola
@@ -150,13 +92,23 @@ encolar p c = Encolada p c
 
 -- ejercicio 5 (a) (3)
 
+esDocCargo :: Persona -> Cargo -> Bool
+esDocCargo (Docente Titular) Titular = True
+esDocCargo (Docente Asociado) Asociado = True
+esDocCargo (Docente Adjunto) Adjunto = True
+esDocCargo (Docente Asistente) Asistente = True
+esDocCargo (Docente Auxiliar) Auxiliar = True
+esDocCargo _ _ = False
+
 busca :: Cola -> Cargo -> Maybe Persona
 busca VaciaC _ = Nothing
 busca (Encolada p c) cargo | esDocCargo p cargo == True = Just p
                            | otherwise = busca c cargo
 
 -- ejercicio 5 (b)
--- Cola parece una lista
+{-
+Cola parece una lista
+-}
 
 ----------------------------------------------------
 
@@ -166,39 +118,6 @@ data ListaAsoc a b = Vacia | Nodo a b (ListaAsoc a b)
     deriving Show
 
 type GuiaTel = ListaAsoc String Int
-
-{-
-type Diccionario = ListaAsoc String String
-type Padron = ListaAsoc Int String
-type Rubbish = ListaAsoc Int Int
-
-GuiaTel :: String -> Int -> GuiaTel
-GuiaTel = ListaAsoc
--}
--- type GuiaTel a b = ListaAsoc String Int
--- type GuiaTel = (String a, Int b) => ListaAsoc a b
-
-{-
-let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (ListaAsoc Vacia)))
-
-let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (GuiaTel Vacia)))
-
-let la = Nodo "one" 1 (Nodo "two" 2 (Nodo "three" 3 (Nodo Vacia)))
-
----
-
-This one:
-let la = Nodo ("one" :: String) (1 :: Int) (Nodo "two" 2 (Nodo "three" 3 Vacia))
-
-let la2 = Nodo ("four" :: String) (4 :: Int) (Nodo "five" 5 (Nodo "six" 6 Vacia))
-
-la3 = la_concat la la2
-
----
-
-let la = Nodo 1 3 (Nodo 2 4 (Nodo 3 5 (Rubbish Vacia)))
--}
-
 
 -- ejercicio 6 (b) (1)
 
