@@ -38,8 +38,7 @@ Docente :: Cargo -> Persona
 -}
 
 -- ejercicio 3 (c)
--- hecho en clase 06/09
--- https://docs.google.com/document/d/1LG6gpk-2ouAMiKliZ1pWXX2_tup62Oa80Eqh2gGOF5k/edit
+-- hecho en clase Com. 2 06/09
 
 cuantos_doc :: [Persona] -> Cargo -> Int
 cuantos_doc [] _ = 0
