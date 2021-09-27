@@ -73,11 +73,6 @@ primerElemento l = Just (head l)
 data Cola = VaciaC | Encolada Persona Cola
     deriving Show
 
-mostrar :: Cola -> [Persona]
-mostrar VaciaC = []
-mostrar (Encolada p c) = p : mostrar c
-
-
 -- ejercicio 5 (a) (1)
 
 atender :: Cola -> Maybe Cola
