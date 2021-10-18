@@ -42,9 +42,9 @@ int main(void)
 /*
 Usando printf(); para mostrar los valores de cada iteración:
 
-Ingrese un valor para x (en el ejercicio original, es 4)
+Ingrese un valor para i (en el ejercicio original, es 4)
 4
-Ingrese un valor para y (en el ejercicio original, es 400)
+Ingrese un valor para j (en el ejercicio original, es 400)
 400
 i |-> 3
 i |-> 2
