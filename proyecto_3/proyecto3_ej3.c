@@ -23,15 +23,26 @@ int main(void)
     printf("Ingrese un valor para z\n");
     scanf("%d", &b);
 
-    int i = x + y + 1;
-    int j = z * z + y * 45 - 15 * x;
-    int k = y - 2 == (x * 3 + 1) % 5;
-    int l = y / 2 * x;
-    int m = y < x * z;
+    /*
+    x es la variable en programa 1.a
+    y e z son las variables en programa 1.b
+    a y b son las variables en programa 1.c
+    */
 
-    printf("El resultado de x + y + 1 es %d\n", i);
-    printf("El resultado de z * z + y * 45 - 15 * x es %d\n", j);
-    printf("El resultado de y - 2 == (x * 3 + 1) mod 5 es %d\n", k);
+    // Programa 1.a
+    x = 5;
+
+    // Programa 1.b
+    y = y + z;
+    z = z + z;
+
+    // Programa 1.c
+    b = b + b;
+    a = a + b;
+
+    printf("El resultado de Programa 1.a es x |-> %d\n", x);
+    printf("El resultado de Programa 1.b es x |-> %d\n, y |-> %d", y, z);
+    printf("El resultado de Programa 1.b es %d\n", k);
     printf("El resultado de y / 2 * x es %d\n", l);
     printf("El resultado de y < x * z es %d\n", m);
     return 0;
