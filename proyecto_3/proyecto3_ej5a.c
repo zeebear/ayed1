@@ -12,9 +12,9 @@ int main(void)
 
 {
     int i, j;
-    printf("Ingrese un valor para x (en el ejercicio original, es 4)\n");
+    printf("Ingrese un valor para i (en el ejercicio original, es 4)\n");
     scanf("%d", &i);
-    printf("Ingrese un valor para y (en el ejercicio original, es 400)\n");
+    printf("Ingrese un valor para j (en el ejercicio original, es 400)\n");
     scanf("%d", &j);
 
     /*
