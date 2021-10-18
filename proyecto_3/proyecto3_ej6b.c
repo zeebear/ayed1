@@ -60,3 +60,13 @@ int main(void)
 
     return 0;
 }
+
+/*
+La ventaja de la nueva versión es que se puede reutilizar varias veces
+la función pedirEntero();
+
+Se puede utilizar la función pedirEntero(); en cualquier ejercicio que
+solicite al usuario el ingreso de los valores -- Ejercicios 1, 3a, 4a,
+5a, y 5b. Se puede utilizar la función imprimeEntero(int x); en cualquier
+ejercicio cuyo fin es la devolución de un entero -- Ejercicios 4a.
+*/
