@@ -68,7 +68,9 @@ x |-> 1, y |-> 3, i |-> 4
 
 Primero, el programa pone el índice igual a 0. Después, cada iteración
 resta el valor de y del valor de x, y a la vez aumenta el índice con 1,
-hasta que el valor de x es menor que el valor de y.
+hasta que el valor de x es menor que el valor de y. El valor final de x
+es el resto de dividir el x original por y, y el valor final del indice
+es el cociente.
 
 ------
 
@@ -83,5 +85,5 @@ a |-> 5, j |-> 5, res |-> 1
 Primero, el programa pone el índice igual a 2 (si el índice fuese 0 o 1,
 x % i != 0 sería falso para cualquier valor de x), y pone res igual a True.
 Después, cada iteración aumenta el índice con 1, hasta que x % i != 0 
-esté falso.
+esté falso. Si el valor final de i es igual a x, x es primo.
 */
