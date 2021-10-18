@@ -30,6 +30,26 @@ int main(void)
     a y b son las variables en programa 1.c
     */
 
+    /*
+    Versión con 'assert' para establecer las precondiciones de los ejercicios originales:
+
+    printf("Ingrese 1 para x\n");
+    scanf("%d", &x);
+    assert(x==1);
+    printf("Ingrese 2 para y\n");
+    scanf("%d", &y);
+    assert(y==2);
+    printf("Ingrese 5 para z\n");
+    scanf("%d", &z);
+    assert(z==5);
+    printf("Ingrese 2 para a\n");
+    scanf("%d", &a);
+    assert(a==2);
+    printf("Ingrese 5 para b\n");
+    scanf("%d", &b);
+    assert(b==5);
+    */
+
     /* Programa 1.a */
     x = 5;
 
