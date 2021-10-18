@@ -4,26 +4,30 @@ Proyecto 3 AyED1
 ----------------------------------------------------
 */
 
-// Ejercicio 1
+// Ejercicio 3
 
 #include <stdio.h>
 #include <stdbool.h>
 int main(void)
 
 {
-    int x, y, z;
+    int x, y, z, a, b;
     printf("Ingrese un valor para x\n");
     scanf("%d", &x);
     printf("Ingrese un valor para y\n");
     scanf("%d", &y);
     printf("Ingrese un valor para z\n");
     scanf("%d", &z);
+    printf("Ingrese un valor para z\n");
+    scanf("%d", &a);
+    printf("Ingrese un valor para z\n");
+    scanf("%d", &b);
 
     int i = x + y + 1;
     int j = z * z + y * 45 - 15 * x;
     int k = y - 2 == (x * 3 + 1) % 5;
     int l = y / 2 * x;
-    bool m = y < x * z;
+    int m = y < x * z;
 
     printf("El resultado de x + y + 1 es %d\n", i);
     printf("El resultado de z * z + y * 45 - 15 * x es %d\n", j);
