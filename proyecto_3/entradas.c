@@ -12,7 +12,7 @@ int pedirEntero(void)
 {
     int x;
 
-    printf("Ingrese un valor numérico para x\n");
+    printf("Ingrese un valor numérico entero\n");
     scanf("%d", &x);
 
     return x;
