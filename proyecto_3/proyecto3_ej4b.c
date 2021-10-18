@@ -12,14 +12,15 @@ Proyecto 3 AyED1
 int main(void)
 
 {
-    int x, y, z;
+    int x, y, z, m;
     printf("Ingrese un valor para x (en el ejercicio original, es 5)\n");
     scanf("%d", &x);
     printf("Ingrese un valor para y (en el ejercicio original, es 4)\n");
     scanf("%d", &y);
     printf("Ingrese un valor para z (en el ejercicio original, es 8)\n");
     scanf("%d", &z);
-    int m = 0;
+    printf("Ingrese un valor para m (en el ejercicio original, es 0)\n");
+    scanf("%d", &m);
 
     /* Parte 1 */
     if (x < y)
@@ -60,6 +61,8 @@ Ingrese un valor para y (en el ejercicio original, es 4)
 4
 Ingrese un valor para z (en el ejercicio original, es 8)
 8
+Ingrese un valor para m (en el ejercicio original, es 0)
+0
 El resultado de Programa 1 es x |-> 5, y |-> 4, z |-> 8, m |-> 4
 El resultado de Programa 2 es x |-> 5, y |-> 4, z |-> 8, m |-> 4
 
@@ -71,6 +74,8 @@ Ingrese un valor para y (en el ejercicio original, es 4)
 9
 Ingrese un valor para z (en el ejercicio original, es 8)
 1
+Ingrese un valor para b (en el ejercicio original, es 0)
+6
 El resultado de Programa 1 es x |-> 5, y |-> 9, z |-> 1, m |-> 5
 El resultado de Programa 2 es x |-> 5, y |-> 9, z |-> 1, m |-> 1
 
