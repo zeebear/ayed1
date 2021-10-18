@@ -48,5 +48,21 @@ El resultado de y < x * z es 1
 
 ------
 
+Ingrese un valor para x
+1
+Ingrese un valor para y
+10
+Ingrese un valor para z
+8
+El resultado de x + y + 1 es 12
+El resultado de z * z + y * 45 - 15 * x es 499
+El resultado de y - 2 == (x * 3 + 1) mod 5 es 0
+El resultado de y / 2 * x es 5
+El resultado de y < x * z es 0
 
+------
+
+En la última expresión, el resultado es de tipo 'int' en el lenguaje 'C'.
+Representan valores booleanos -- un '0' significa 'False', y un '1'
+significa 'True'.
 */
