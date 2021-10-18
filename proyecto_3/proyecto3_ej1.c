@@ -4,7 +4,7 @@ Proyecto 3 AyED1
 ----------------------------------------------------
 */
 
-// Ejercicio 1
+/* Ejercicio 1 */
 
 #include <stdio.h>
 #include <stdbool.h>

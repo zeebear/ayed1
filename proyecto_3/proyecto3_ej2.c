@@ -4,7 +4,7 @@ Proyecto 3 AyED1
 ----------------------------------------------------
 */
 
-// Ejercicio 2
+/* Ejercicio 2 */
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -38,5 +38,5 @@ w = true
 Resultados:
 x % 4 == 0 es True
 x + y == 0 && y - x == (-1) * z es True
-not b && w es fFalse
+not b && w es False
 */

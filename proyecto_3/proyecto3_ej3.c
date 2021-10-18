@@ -4,7 +4,7 @@ Proyecto 3 AyED1
 ----------------------------------------------------
 */
 
-// Ejercicio 3
+/* Ejercicio 3 */
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -18,9 +18,9 @@ int main(void)
     scanf("%d", &y);
     printf("Ingrese un valor para z\n");
     scanf("%d", &z);
-    printf("Ingrese un valor para z\n");
+    printf("Ingrese un valor para a\n");
     scanf("%d", &a);
-    printf("Ingrese un valor para z\n");
+    printf("Ingrese un valor para b\n");
     scanf("%d", &b);
 
     /*
@@ -29,55 +29,70 @@ int main(void)
     a y b son las variables en programa 1.c
     */
 
-    // Programa 1.a
+    /* Programa 1.a */
     x = 5;
 
-    // Programa 1.b
+    /* Programa 1.b */
     y = y + z;
     z = z + z;
 
-    // Programa 1.c
+    /* Programa 1.c */
     b = b + b;
     a = a + b;
 
     printf("El resultado de Programa 1.a es x |-> %d\n", x);
-    printf("El resultado de Programa 1.b es x |-> %d\n, y |-> %d", y, z);
-    printf("El resultado de Programa 1.b es %d\n", k);
-    printf("El resultado de y / 2 * x es %d\n", l);
-    printf("El resultado de y < x * z es %d\n", m);
+    printf("El resultado de Programa 1.b es y |-> %d, z |-> %d\n", y, z);
+    printf("El resultado de Programa 1.c es a |-> %d, b |-> %d\n", a, b);
     return 0;
 }
 
 /*
-Ingrese un valor para x
-7
-Ingrese un valor para y
-3
-Ingrese un valor para z
-5
-El resultado de x + y + 1 es 11
-El resultado de z * z + y * 45 - 15 * x es 55
-El resultado de y - 2 == (x * 3 + 1) mod 5 es 0
-El resultado de y / 2 * x es 7
-El resultado de y < x * z es 1
-
-------
-
+EJECUCION 1:
 Ingrese un valor para x
 1
 Ingrese un valor para y
-10
+2
 Ingrese un valor para z
-8
-El resultado de x + y + 1 es 12
-El resultado de z * z + y * 45 - 15 * x es 499
-El resultado de y - 2 == (x * 3 + 1) mod 5 es 0
-El resultado de y / 2 * x es 5
-El resultado de y < x * z es 0
+5
+Ingrese un valor para a
+2
+Ingrese un valor para b
+5
+El resultado de Programa 1.a es x |-> 5
+El resultado de Programa 1.b es y |-> 7, z |-> 10
+El resultado de Programa 1.c es a |-> 12, b |-> 10
 
 ------
 
-En la última expresión, el resultado es de tipo 'int' en el lenguaje 'C'.
-Representan valores booleanos -- un '0' significa 'False', y un '1'
-significa 'True'.
+EJECUCION 2:
+Ingrese un valor para x
+3
+Ingrese un valor para y
+5
+Ingrese un valor para z
+7
+Ingrese un valor para a
+5
+Ingrese un valor para b
+7
+El resultado de Programa 1.a es x |-> 5
+El resultado de Programa 1.b es y |-> 12, z |-> 14
+El resultado de Programa 1.c es a |-> 19, b |-> 14
+
+------
+
+EJECUCION 3:
+Ingrese un valor para x
+7
+Ingrese un valor para y
+2
+Ingrese un valor para z
+6
+Ingrese un valor para a
+2
+Ingrese un valor para b
+6
+El resultado de Programa 1.a es x |-> 5
+El resultado de Programa 1.b es y |-> 8, z |-> 12
+El resultado de Programa 1.c es a |-> 14, b |-> 12
 */
