@@ -67,6 +67,42 @@ la función pedirEntero();
 
 Se puede utilizar la función pedirEntero(); en cualquier ejercicio que
 solicite al usuario el ingreso de los valores -- Ejercicios 1, 3a, 4a,
-5a, y 5b. Se puede utilizar la función imprimeEntero(int x); en cualquier
-ejercicio cuyo fin es la devolución de un entero -- Ejercicios 4a.
+5a, y 5b.
+
+------
+
+Ejercicio 4a reescrito:
+
+#include <stdio.h>
+#include <stdbool.h>
+int main(void)
+{
+    int x = pedirEntero();
+    int y = pedirEntero();
+    int a = pedirEntero();
+    int b = pedirEntero();
+    
+    if (x >= y)
+    {
+        x = 0;
+    }
+    else
+    {
+        x = 2;
+    }
+
+    if (a >= b)
+    {
+        a = 0;
+    }
+    else
+    {
+        a = 2;
+    }
+
+    printf("El resultado de Programa 1.e es x |-> %d, y |-> %d\n", x, y);
+    printf("El resultado de Programa 1.f es a |-> %d, b |-> %d\n", a, b);
+    return 0;
+}
+
 */
