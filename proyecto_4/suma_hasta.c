@@ -5,9 +5,9 @@ int suma_hasta(int N)
 {
     int n, i, j;
 
-    n = N;
     i = 0;
-    j = n;
+    j = N;
+    n = N;
 
     while (i < j)
     {
@@ -17,15 +17,25 @@ int suma_hasta(int N)
     return n;
 }
 
+int suma_hasta_gauss(int N)
+{
+    int n = N;
+    n = n * (n + 1) / 2;
+    return n;
+}
+
 int main(void)
 {
-    int n, m;
+    int n, m, p;
     printf("Ingrese un valor numérico entero N:\n");
     scanf("%d", &n);
     assert(n > 0);
 
     m = suma_hasta(n);
-    printf("La suma de todos los números hasta N = %d es %d\n", n, m);
+    printf("Usando un ciclo para calcularlo, la suma de todos los números hasta N = %d es %d\n", n, m);
+
+    p = suma_hasta_gauss(n);
+    printf("Usando la fórmula de Gauss, la suma de todos los números hasta N = %d es %d\n", n, p);
 
     return 0;
 }
