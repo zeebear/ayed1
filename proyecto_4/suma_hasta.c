@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <assert.h>
 
-int main(void)
+int suma_hasta(int N)
 {
     int n, i, j;
-    printf("Ingrese un valor numérico entero N:\n");
-    scanf("%d", &n);
-    assert(n > 0);
 
+    n = N;
     i = 0;
     j = n;
 
@@ -16,8 +14,18 @@ int main(void)
         n = n + i;
         i++;
     }
+    return n;
+}
 
-    printf("La suma de todos los números hasta N = %d es %d\n", i, n);
+int main(void)
+{
+    int n, m;
+    printf("Ingrese un valor numérico entero N:\n");
+    scanf("%d", &n);
+    assert(n > 0);
+
+    m = suma_hasta(n);
+    printf("La suma de todos los números hasta N = %d es %d\n", n, m);
 
     return 0;
 }
