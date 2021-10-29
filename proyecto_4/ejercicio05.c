@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <assert.h>
 
 void pedirArreglo(int a[], int n_max)
 {
