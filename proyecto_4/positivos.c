@@ -1,6 +1,13 @@
+/*
+----------------------------------------------------
+Proyecto 4 AyED1
+----------------------------------------------------
+*/
+
+/* Ejercicio 7 -- positivos.c */
+
 #include <stdio.h>
 #include <stdbool.h>
-#include <assert.h>
 
 bool existe_positivo(int a[], int tam)
 {
@@ -40,7 +47,7 @@ bool todos_positivos(int a[], int tam)
 
 int main(void)
 {
-    /* asumiendo un tamaño constante de 4*/
+    /* asumiendo un tamaño constante de 4 */
     int tam = 4;
     int a[4];
 
