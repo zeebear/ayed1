@@ -1,3 +1,11 @@
+/*
+----------------------------------------------------
+Proyecto 4 AyED1
+----------------------------------------------------
+*/
+
+/* Ejercicio 6 -- sumatoria.c */
+
 #include <stdio.h>
 
 int sumatoria(int a[], int tam)
