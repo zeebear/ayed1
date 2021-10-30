@@ -63,7 +63,7 @@ int main(void)
     if (elige == 1)
     {
         hay_positivo = existe_positivo(a, tam);
-        if (hay_positivo == true)
+        if (hay_positivo)
         {
             printf("Hay al menos un número positivo en el arreglo\n");
         }
@@ -75,7 +75,7 @@ int main(void)
     else
     {
         hay_positivo = todos_positivos(a, tam);
-        if (hay_positivo == true)
+        if (hay_positivo)
         {
             printf("Todos los números del arreglo son positivos\n");
         }
