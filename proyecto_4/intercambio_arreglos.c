@@ -43,7 +43,7 @@ int main(void)
     int a[4];
 
     int i = 0;
-    int n, j;
+    int n, j, k;
 
     while (i < tam)
     {
@@ -54,12 +54,12 @@ int main(void)
     }
 
     printf("Ingrese el índice del primer número que quiere intercambiar:\n");
-    scanf("%d", &i);
+    scanf("%d", &k);
 
     printf("Ingrese el índice del segundo número que quiere intercambiar:\n");
     scanf("%d", &j);
 
-    intercambiar(a, tam, i, j);
+    intercambiar(a, tam, k, j);
     imprimeArreglo(a, tam);
 
     return 0;
