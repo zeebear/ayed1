@@ -1,3 +1,11 @@
+/*
+----------------------------------------------------
+Proyecto 4 AyED1
+----------------------------------------------------
+*/
+
+/* Ejercicio 5 -- ejercicio05.c */
+
 #include <stdio.h>
 
 void pedirArreglo(int a[], int n_max)
