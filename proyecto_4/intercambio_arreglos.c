@@ -1,3 +1,11 @@
+/*
+----------------------------------------------------
+Proyecto 4 AyED1
+----------------------------------------------------
+*/
+
+/* Ejercicio 8 -- intercambio_arreglos.c */
+
 #include <stdio.h>
 #include <assert.h>
 
