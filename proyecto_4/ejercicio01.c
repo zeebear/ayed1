@@ -1,5 +1,12 @@
+/*
+----------------------------------------------------
+Proyecto 4 AyED1
+----------------------------------------------------
+*/
+
+/* Ejercicio 1 -- ejercicio01.c */
+
 #include <stdio.h>
-#include <stdbool.h>
 #include <assert.h>
 
 void holaHasta(int n)
