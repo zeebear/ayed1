@@ -58,9 +58,9 @@ int main(void)
 
     /*
     11(b) para peir que, al ingresar un valor negativo, solicite un nuevo
-    valor hasta que se ingrese un n no negativo
+    valor hasta que se ingrese un n no negativo:
     */
-    if (n < 0)
+    while (n < 0)
     {
         printf("Error: El valor ingresado no puede ser negativo. Ingrese un valor numérico entero positivo N:\n");
         scanf("%d", &n);
