@@ -33,10 +33,40 @@ float peso_promedio(persona_t arr[], unsigned int longitud)
 
 persona_t persona_de_mayor_edad(persona_t arr[], unsigned int longitud)
 {
+    unsigned int i = 0;
+    float edad = 0;
+    persona_t mayor;
+
+    while (i < longitud)
+    {
+        if (edad <= arr[i].edad)
+        {
+            edad = arr[i].edad;
+            mayor = arr[i];
+        }
+        i++;
+    }
+
+    return mayor;
 }
 
 persona_t persona_de_menor_altura(persona_t arr[], unsigned int longitud)
 {
+    unsigned int i = 0;
+    float altura = 4.00;
+    persona_t menor;
+
+    while (i < longitud)
+    {
+        if (altura >= arr[i].altura)
+        {
+            altura = arr[i].altura;
+            menor = arr[i];
+        }
+        i++;
+    }
+
+    return menor;
 }
 
 int main(void)
