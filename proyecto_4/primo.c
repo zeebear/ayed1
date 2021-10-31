@@ -7,32 +7,37 @@ Proyecto 4 AyED1
 /* Ejercicio 11 -- primo.c */
 
 #include <stdio.h>
-#include <stdbool.h>
 #include <assert.h>
 
 int nesimo_primo(int N)
 {
-    int primo_numero = 0;
+    int primo_numero = 1;
     int i = 2;
     int es_p = 2;
     int nesimo_p;
 
     while (primo_numero <= N)
     {
-        if (es_p % i == 0 && i < es_p)
+        while (i < es_p)
         {
-            i == 2;
-            es_p++;
+            if (es_p % i == 0)
+            {
+                i = 2;
+                es_p++;
+            }
+            i++;
         }
-        else if (primo_numero < N)
+
+        if (primo_numero < N)
         {
             primo_numero++;
-            i == 2;
+            i = 2;
             es_p++;
         }
         else
         {
             nesimo_p = es_p;
+            primo_numero++;
         }
     }
 
@@ -42,7 +47,7 @@ int nesimo_primo(int N)
 int main(void)
 {
 
-    int n, p;
+    int n;
     printf("Ingrese un valor numérico entero N:\n");
     scanf("%d", &n);
 
@@ -55,9 +60,10 @@ int main(void)
     11(b) para peir que, al ingresar un valor negativo, solicite un nuevo
     valor hasta que se ingrese un n no negativo
     */
-    while (n < 0)
+    if (n < 0)
     {
         printf("Error: El valor ingresado no puede ser negativo. Ingrese un valor numérico entero positivo N:\n");
+        scanf("%d", &n);
     }
 
     int p = nesimo_primo(n);
