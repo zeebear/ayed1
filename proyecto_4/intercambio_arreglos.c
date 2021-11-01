@@ -38,9 +38,10 @@ void imprimeArreglo(int a[], int n_max)
 
 int main(void)
 {
-    /* asumiendo un tamaño constante de 4 */
-    int tam = 4;
-    int a[4];
+    int tam;
+    printf("Ingrese la cantidad de números en el arreglo:\n");
+    scanf("%d", &tam);
+    int a[tam];
 
     int i = 0;
     int n, j, k;
