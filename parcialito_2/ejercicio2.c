@@ -4,7 +4,7 @@ Parcialito 2 AyED1 2021
 ----------------------------------------------------
 */
 
-/* Ejercicio 1 -- asignación múltiple */
+/* Ejercicio 2 -- ordenar tres números */
 
 #include <stdio.h>
 
@@ -105,6 +105,7 @@ int main(void)
     scanf("%d", &z);
 
     struct orden_t ordenados = orden(x, y, z);
+
     int a, b, c;
     a = ordenados.primero;
     b = ordenados.segundo;
