@@ -49,10 +49,10 @@ struct datos_t stats(float a[], int tam)
 
 int main(void)
 {
-    /* pide al usuario los datos del arreglo */
-    /* asumiendo un tamaño constante de 4 */
-    int tam = 4;
-    float a[4], n;
+    int tam;
+    printf("Ingrese la cantidad de números en el arreglo:\n");
+    scanf("%d", &tam);
+    float a[tam], n;
 
     int i = 0;
 
