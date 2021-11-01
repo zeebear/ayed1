@@ -12,6 +12,7 @@ Proyecto 4 AyED1
 int nesimo_primo(int N)
 {
     int primo_numero = 1;
+    /* el primer número primo es 2 */
     int i = 2;
     int es_p = 2;
     int nesimo_p;
