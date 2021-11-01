@@ -10,7 +10,7 @@ Proyecto 4 AyED1
 #include <assert.h>
 
 /*
- var m, x, y : Int ;
+var m, x, y : Int ;
 { True }
 if x ≤ y →
     m ≔ x
