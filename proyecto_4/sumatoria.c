@@ -24,7 +24,7 @@ int sumatoria(int a[], int tam)
 int main(void)
 {
     int tam;
-    printf("Ingrese la cantidad de números en el arreglo:\n");
+    printf("Ingrese la cantidad de números que quiere sumar:\n");
     scanf("%d", &tam);
     int a[tam];
 
