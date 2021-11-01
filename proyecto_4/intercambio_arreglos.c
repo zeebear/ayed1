@@ -54,12 +54,18 @@ int main(void)
     }
 
     printf("Ingrese el índice del primer número que quiere intercambiar:\n");
-    scanf("%d", &k);
-
-    printf("Ingrese el índice del segundo número que quiere intercambiar:\n");
     scanf("%d", &j);
 
-    intercambiar(a, tam, k, j);
+    printf("Ingrese el índice del segundo número que quiere intercambiar:\n");
+    scanf("%d", &k);
+
+    /* 
+    si con "la posición" en la lista quieren pedir el ordinal y no el índice, después de pedir los valores de k y j hay que agregar las próximas dos líneas:
+    j = j - 1;
+    k = k - 1;
+    */
+
+    intercambiar(a, tam, j, k);
     imprimeArreglo(a, tam);
 
     return 0;
