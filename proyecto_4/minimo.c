@@ -10,20 +10,20 @@ Proyecto 4 AyED1
 #include <assert.h>
 
 /*
- Var  r,x,y : Int ;
+ var m, x, y : Int ;
 { True }
 if x ≤ y →
-    r ≔ x
+    m ≔ x
 ⌷ y ≤ x → 
-    r ≔ y
+    m ≔ y
 fi
-{ r ≤ x  ∧  r ≤ y  ∧  (r = x  ∨  r = y) }
+{ m ≤ x  ∧  m ≤ y  ∧  (m = x  ∨  m = y) }
 
 */
 
 int main(void)
 {
-    int r, x, y;
+    int m, x, y;
 
     printf("Ingrese el primer valor numérico entero para comparar:\n");
     scanf("%d", &x);
@@ -33,15 +33,15 @@ int main(void)
 
     if (x <= y)
     {
-        r = x;
+        m = x;
     }
     else
     {
-        r = y;
+        m = y;
     }
-    assert((r == x || r == y) && r <= x && r <= y);
+    assert((m == x || m == y) && m <= x && m <= y);
 
-    printf("El mínimo entre %d y %d es %d\n", x, y, r);
+    printf("El mínimo entre %d y %d es %d\n", x, y, m);
 
     return 0;
 }
