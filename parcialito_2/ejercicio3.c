@@ -34,6 +34,7 @@ int mult_pares(int array[], int tam)
     {
         if (array[i] % 2 == 0)
         {
+            pares = true;
             producto = producto * array[i];
         }
         i++;
